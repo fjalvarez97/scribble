@@ -47,6 +47,17 @@ public class DrawDemo
         
         triangle(pen);
     }
+    
+    /**
+     * Draw a pentagom on the screen.
+     */
+    public void drawPentagon()
+    {
+        Pen pen = new Pen(320, 260, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        pentagon(pen);
+    }
 
     /**
      * Draw a wheel made of many squares.
@@ -74,7 +85,7 @@ public class DrawDemo
     }
     
     /**
-     * Draw a green triangle's at the parameter's location
+     * Draw a triangle
      */
     private void triangle(Pen pen)
     {
@@ -82,6 +93,18 @@ public class DrawDemo
         for (int i=0; i<3; i++) {
             pen.move(100);
             pen.turn(angl*2);
+        }
+    }
+    
+    /**
+     * Draw a pentagon
+     */
+    private void pentagon(Pen pen)
+    {
+        int angl = 360/5;
+        for (int i=0; i<5; i++) {
+            pen.move(100);
+            pen.turn(angl);
         }
     }
 
