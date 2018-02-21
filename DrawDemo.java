@@ -34,6 +34,19 @@ public class DrawDemo
 
         square(pen);
     }
+    
+    /**
+     * Draw a triangle on the screen
+     * @param x The x-coordinate of the initial triangle position
+     * @param y The y-coordinate of the initial triangle position
+     */
+    public void drawTriangle(int x,int y)
+    {
+        Pen pen = new Pen(x,y,myCanvas);
+        pen.setColor(Color.GREEN);
+        
+        triangle(pen);
+    }
 
     /**
      * Draw a wheel made of many squares.
@@ -57,6 +70,18 @@ public class DrawDemo
         for (int i=0; i<4; i++) {
             pen.move(100);
             pen.turn(90);
+        }
+    }
+    
+    /**
+     * Draw a green triangle's at the parameter's location
+     */
+    private void triangle(Pen pen)
+    {
+        int angl = -60;
+        for (int i=0; i<3; i++) {
+            pen.move(100);
+            pen.turn(angl*2);
         }
     }
 
