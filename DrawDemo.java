@@ -58,6 +58,17 @@ public class DrawDemo
 
         pentagon(pen);
     }
+    
+    /**
+     * Draw a polygon on the screen.
+     */
+    public void drawPolygon(int x)
+    {
+        Pen pen = new Pen(150, 200, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        polygon(pen,x);
+    }
 
     /**
      * Draw a wheel made of many squares.
@@ -104,6 +115,19 @@ public class DrawDemo
         int angl = 360/5;
         for (int i=0; i<5; i++) {
             pen.move(100);
+            pen.turn(angl);
+        }
+    }
+    
+    /**
+     * Draw a poligon with 
+     * @param x sides
+     */
+    private void polygon(Pen pen,int x)
+    {
+        int angl = -360/x;
+        for (int i=0; i<x; i++) {
+            pen.move(80);
             pen.turn(angl);
         }
     }
