@@ -34,7 +34,7 @@ public class DrawDemo
 
         square(pen);
     }
-    
+
     /**
      * Draw a triangle on the screen
      * @param x The x-coordinate of the initial triangle position
@@ -44,10 +44,10 @@ public class DrawDemo
     {
         Pen pen = new Pen(x,y,myCanvas);
         pen.setColor(Color.GREEN);
-        
+
         triangle(pen);
     }
-    
+
     /**
      * Draw a pentagom on the screen.
      */
@@ -58,7 +58,7 @@ public class DrawDemo
 
         pentagon(pen);
     }
-    
+
     /**
      * Draw a polygon on the screen.
      */
@@ -68,6 +68,17 @@ public class DrawDemo
         pen.setColor(Color.GREEN);
 
         polygon(pen,x);
+    }
+
+    /**
+     * Draw a spiral on the screen.
+     */
+    public void drawSpiral()
+    {
+        Pen pen = new Pen(150, 200, myCanvas);
+        pen.setColor(Color.BLACK);
+
+        spiral(pen);
     }
 
     /**
@@ -94,7 +105,7 @@ public class DrawDemo
             pen.turn(90);
         }
     }
-    
+
     /**
      * Draw a triangle
      */
@@ -106,7 +117,7 @@ public class DrawDemo
             pen.turn(angl*2);
         }
     }
-    
+
     /**
      * Draw a pentagon
      */
@@ -118,7 +129,7 @@ public class DrawDemo
             pen.turn(angl);
         }
     }
-    
+
     /**
      * Draw a poligon with 
      * @param x sides
@@ -129,6 +140,19 @@ public class DrawDemo
         for (int i=0; i<x; i++) {
             pen.move(80);
             pen.turn(angl);
+        }
+    }
+
+    /**
+     * Draw a spiral 
+     */
+    private void spiral(Pen pen)
+    {
+        int x = 200;
+        for (int i=0; i<40; i++) {
+            pen.move(x-5);
+            x -= 5;
+            pen.turn(90);
         }
     }
 
@@ -145,11 +169,11 @@ public class DrawDemo
             int green = random.nextInt(256);
             int blue = random.nextInt(256);
             pen.setColor(new Color(red, green, blue));
-            
+
             pen.randomSquiggle();
         }
     }
-    
+
     /**
      * Clear the screen.
      */
